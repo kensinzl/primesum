@@ -43,4 +43,10 @@ public class PrimeSumServiceTest {
         assertEquals(77, sum);
     }
 
+    @Test
+    void test_sumPrimesToN_SpecialCase_TenMillions() {
+        Long sum = primeSumService.sumPrimesToN(10000000);
+        assertEquals(3203324994356l,  sum);
+    }
+
 }
