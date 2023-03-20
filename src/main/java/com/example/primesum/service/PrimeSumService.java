@@ -15,8 +15,10 @@ public class PrimeSumService {
      */
     public Long sumPrimesToN(int n) {
 
-        if(n > 10000000) {
-            throw new PrimeSumServiceException("The max number have to be less than 10 millions. ");
+        // has to be less than Integer.MAX_VALUE to avoid explode the following array max size and also Integer max
+        // TODO: if your local memory is enough, test the Integer.MAX_VALUE -1
+        if(n < 0 || n == Integer.MAX_VALUE) {
+            throw new PrimeSumServiceException("The max number have to be over zero or less than Integer.MAX_VALUE. ");
         }
 
         // init all as the prime
